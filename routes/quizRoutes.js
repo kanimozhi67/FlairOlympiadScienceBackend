@@ -20,7 +20,8 @@ import {
   checkAddCircle,
   generateQuestionDiv,
   generateQuestionDiv2,
-  generateQuestionDiv3
+  generateQuestionDiv3,
+  generateQuestionAddSubp2
 } from "../controllers/quizController.js";
 import {
   generateQuestionMulp,
@@ -74,12 +75,19 @@ import { checkAnswerFraction,  checkAnswerFraction2,  generateFractionQuiz, gene
    wordFractionQuiz4,
    wordMoneyQuiz4} from "../controllers/fractionController.js";
 import { explainWrongAnswer, explainWrongAnswer2, explainWrongAnswer3 } from "../controllers/openaiController.js";
+import {checkFacePlace, genFacePlace} from "../controllers/placevalueController.js";
+import { genNumberFormation, checkNumberFormation } from "../controllers/placevalue2Controller.js";
+import { checkRoundingQuiz, genRoundingQuiz } from "../controllers/roundingoffController.js";
+import { checkExpandedQuiz, checkStandardQuiz, genExpandedQuiz, genStandardQuiz } from "../controllers/expandedformController.js";
+import { checkIPlaceValue, genIPlaceValue } from "../controllers/internationalpvController.js";
+import { checkRomanQuiz, genRomanQuiz } from "../controllers/romannummeralController.js";
 
 
 const router = express.Router();
 
 router.get("/math", generateQuestionAddSub);
 router.get("/mathp", generateQuestionAddSubp);
+router.get("/mathp2", generateQuestionAddSubp2);
 router.post("/check", checkAnswer);
 
 router.get("/mathlevel3", generateQuestionAddSub3);
@@ -114,6 +122,23 @@ router.get("/sudokulevel3", generateSudoku3);
 router.get("/sudokup", generateSudokup);
 router.get("/sudokuplevel2", generateSudokup2);
 router.get("/sudokuplevel3", generateSudokup3);
+
+router.get("/placevalue", genFacePlace);
+router.get("/placevalue2",  genNumberFormation);
+router.get("/placevalue3",  genExpandedQuiz);
+router.get("/placevalue4",  genStandardQuiz);
+router.get("/placevalue5",  genRoundingQuiz);
+router.get("/placevalue6", genIPlaceValue);
+router.get("/placevalue7", genRomanQuiz);
+router.post("/checkplacevalue", checkFacePlace);
+router.post("/checkplacevalue2",  checkNumberFormation);
+router.post("/checkplacevalue3", checkExpandedQuiz);
+router.post("/checkplacevalue4", checkStandardQuiz);
+router.post("/checkplacevalue5", checkRoundingQuiz);
+router.post("/checkplacevalue6", checkIPlaceValue);
+router.post("/checkplacevalue7", checkRomanQuiz);
+
+
 
 router.get("/money", genMoney);
 router.get("/moneylevel2", genMoney2);

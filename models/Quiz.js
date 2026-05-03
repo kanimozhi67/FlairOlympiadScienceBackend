@@ -13,16 +13,20 @@ const QuizSchema = new mongoose.Schema({
 mul: { type: Number },
 skip: { type: Number },
 
+answerarr: {
+  type: [Number], // array of numbers
+},
 
+ kind: {
+  type: String,
+  required: true,
+  default: "general", // ✅ prevents crash
+},
   answer:  Number,
 answerString:String,
  answerStringArr: mongoose.Schema.Types.Mixed,
-// answerStringArr: [
-//   {
-//     type: Map,
-//     of: String
-//   }
-// ],
+
+
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
