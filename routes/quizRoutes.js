@@ -81,9 +81,48 @@ import { checkRoundingQuiz, genRoundingQuiz } from "../controllers/roundingoffCo
 import { checkExpandedQuiz, checkStandardQuiz, genExpandedQuiz, genStandardQuiz } from "../controllers/expandedformController.js";
 import { checkIPlaceValue, genIPlaceValue } from "../controllers/internationalpvController.js";
 import { checkRomanQuiz, genRomanQuiz } from "../controllers/romannummeralController.js";
+import { checkQuiz, generateQuiz } from "../controllers/largenumwsContoller.js";
+import { checkQuiz2, generateQuiz2 } from "../controllers/additionwsController.js";
+import { checkSubtractionQuiz, generateSubtractionQuiz } from "../controllers/subtractionwsController.js";
+import { checkMultiplicationQuiz, generateMultiplicationQuiz } from "../controllers/mulwsController.js";
+import { checkDivisionQuiz, generateDivisionQuiz } from "../controllers/divwsController.js";
+import { checkFactorQuiz, generateFactorQuiz } from "../controllers/factorwsController.js";
+import { checkGeometryQuiz, generateGeometryQuiz } from "../controllers/geometryController.js";
+import { checkMeasureQuiz, generateMeasureQuiz } from "../controllers/measurementwsController.js";
+import { checkTimeQuiz, generateTimeQuiz } from "../controllers/timewsController.js";
+import { checkMoneywsQuiz, generateMoneywsQuiz } from "../controllers/moneywsController.js";
+import { checkPatternwsQuiz, generatePatternwsQuiz } from "../controllers/patternswsController.js";
+import { checkFractionwsQuiz, generateFractionwsQuiz } from "../controllers/fractionwsController.js";
 
 
 const router = express.Router();
+
+router.get("/grade4ws1", generateQuiz);
+router.get("/grade4ws2", generateQuiz2);
+router.get("/grade4ws3", generateSubtractionQuiz);
+router.get("/grade4ws4", generateMultiplicationQuiz);
+router.get("/grade4ws5", generateDivisionQuiz);
+router.get("/grade4ws6", generateFactorQuiz);
+router.get("/grade4ws7", generateGeometryQuiz);
+router.get("/grade4ws8", generateMeasureQuiz);
+router.get("/grade4ws9", generateTimeQuiz);
+router.get("/grade4ws10", generateMoneywsQuiz);
+router.get("/grade4ws11", generatePatternwsQuiz);
+router.get("/grade4ws12", generateFractionwsQuiz);
+
+
+router.post("/checkgrade4ws1", checkQuiz);
+router.post("/checkgrade4ws2", checkQuiz2);
+router.post("/checkgrade4ws3", checkSubtractionQuiz);
+router.post("/checkgrade4ws4", checkMultiplicationQuiz);
+router.post("/checkgrade4ws5", checkDivisionQuiz);
+router.post("/checkgrade4ws6", checkFactorQuiz);
+router.post("/checkgrade4ws7", checkGeometryQuiz);
+router.post("/checkgrade4ws8", checkMeasureQuiz);
+router.post("/checkgrade4ws9", checkTimeQuiz);
+router.post("/checkgrade4ws10", checkMoneywsQuiz);
+router.post("/checkgrade4ws11", checkPatternwsQuiz);
+router.post("/checkgrade4ws12", checkFractionwsQuiz);
 
 router.get("/math", generateQuestionAddSub);
 router.get("/mathp", generateQuestionAddSubp);

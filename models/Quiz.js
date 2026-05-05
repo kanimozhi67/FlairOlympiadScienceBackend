@@ -25,7 +25,7 @@ answerarr: {
   answer:  Number,
 answerString:String,
  answerStringArr: mongoose.Schema.Types.Mixed,
-
+ data: mongoose.Schema.Types.Mixed,
 
   userId: {
     type: mongoose.Schema.Types.ObjectId,
