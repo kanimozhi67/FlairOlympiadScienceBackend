@@ -44,9 +44,10 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://flairfrontend.vercel.app",
-      "https://www.flairolympiad.com",   // 👈 ADD THIS
-      "https://flairolympiad.com"        // 👈 ALSO ADD ROOT (important)
+      "https://flair-olympiad-science-frontend.vercel.app"
+      // "https://flairfrontend.vercel.app",
+      // "https://www.flairolympiad.com",   // 👈 ADD THIS
+      // "https://flairolympiad.com"        // 👈 ALSO ADD ROOT (important)
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
