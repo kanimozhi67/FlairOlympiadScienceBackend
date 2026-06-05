@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import School from "../models/Schools.js";
 // import User from "../models/User.js";
 // import stripe from "../utils/stripe.js";
 // Connect MongoDB
@@ -7,6 +8,19 @@ const connectdb = async() => {
     await mongoose.connect(process.env.MONGO_URL);
     console.log("MongoDB Connected");
 
+//  const school = new School({
+//       name: "FLAIR CBSE SCHOOL",
+//       address: "Madurai, India",
+//       city: "Madurai",
+//       state: "Tamil Nadu",
+//       zipCode: "625109", 
+//     });
+
+//     const savedSchool = await school.save();
+
+//     console.log("School created successfully:", savedSchool);
+
+// console.log("Updated user:", user);
 
 // const email = "anju@gmail.com";
 
