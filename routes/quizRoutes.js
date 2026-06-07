@@ -7,6 +7,7 @@ import { checkwsQuiz, generatewsQuiz, generatewsQuiz10, generatewsQuiz11,
      generatewsQuiz12, generatewsQuiz13, generatewsQuiz2, generatewsQuiz3,
       generatewsQuiz4, generatewsQuiz5, generatewsQuiz6, generatewsQuiz7, 
       generatewsQuiz8, generatewsQuiz9 } from "../controllers/greenplantswsContoller.js";
+import { explainWrongAnswer ,explainWrongAnswer2,explainWrongAnswer3} from "../controllers/openaiController.js";
 
 
 
@@ -42,9 +43,12 @@ router.get("/grade4gpwsquiz13", generatewsQuiz13);
 
 
 
+
 router.post("/checkgrade4gpquiz", checkAnswergp);
 router.post("/checkgrade4gpwsquiz", checkwsQuiz);
 
-
+router.post("/explain", explainWrongAnswer);
+router.post("/explain2", explainWrongAnswer2);
+router.post("/explain3", explainWrongAnswer3);
 
 export default router;
